@@ -1,0 +1,194 @@
+{
+    "id": "68dcaa6b-242c-57ca-a66d-52a3ceaeb9f4",
+    "modifiedAt": "2026-10-20T05:40:09.898Z",
+    "createdAt": "2026-10-20T05:40:09.898Z",
+    "name": "LR Console Page 2 VSN1 r1020-1040",
+    "description": "Click here to add description",
+    "type": "VSN1L",
+    "version": {
+        "major": "1",
+        "minor": "7",
+        "patch": "2"
+    },
+    "configType": "profile",
+    "configs": [
+        {
+            "controlElementNumber": 0,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self.midirx_cb=function(self,h,d)if h[1]~=13 and d[2]==176 then if d[3]==115 then bm=d[4]>0 end end end lr_n=0 lr_m=\"?\" lr_l=\"none\" lr_f=\"\" ev_p=\"\" ev_v=\"\" LrImportActive=function(id,m,l,p,v,r,f)lr_n=lr_n+1 lr_m=m lr_l=l lr_f=f if p~=\"\" then ev_p=p ev_v=v end if relab then relab()end end lria=LrImportActive LrImportActive=function(id,m,l,p,v,r,f)lria(id,m,l,p,v,r,f)local nk=(m==\"M\")and kmsk~=nil and next(kmsk)~=nil rm=(m==\"C\")if nk~=mk then mk=nk if mk and kmsk[2]and selb then selb(2)elseif radio then radio(ele[8].l_b)end end if p~=\"\" and selb then local t=mk and kmsk or kpar local c=t[ele[8].l_b]if not c or c[1]~=p then for i=0,15 do if t[i]and t[i][1]==p then selb(i)end end end if hse then hse(p,v)end end end if kcol then setc(0,kcol[0])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 1,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] kpar={[0]={\"ParametricHighlights\",100,5,1},[1]={\"ParametricLights\",100,5,1},[2]={\"ParametricDarks\",100,5,1},[3]={\"ParametricShadows\",100,5,1},[8]={\"ColorGradeShadowLum\",120,5,1},[9]={\"ColorGradeMidtoneLum\",120,5,1},[10]={\"ColorGradeHighlightLum\",120,5,1},[11]={\"ColorGradeGlobalLum\",120,5,1},[12]={\"ColorGradeBlending\",120,5,1},[13]={\"SplitToningBalance\",120,5,1}}if kcol then setc(1,kcol[1])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 2,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] kmsk={}if kcol then setc(2,kcol[2])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 3,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(3,kcol[3])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 4,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hc={Red={255,0,0},Orange={255,110,0},Yellow={255,220,0},Green={40,200,0},Aqua={0,200,180},Blue={0,90,255},Purple={140,0,255},Magenta={255,0,180}}function hse(p,v)local a,b=p:match(\"^(%a-)Adjustment(%a+)$\")if a then hx=b .. \" \" .. a:sub(1,3)hv=v hk=hc[b]ht=24 hp=false end if hp then if p==\"SplitToningShadowSaturation\" then ps=v ht=24 elseif p==\"SplitToningHighlightSaturation\" then ph=v ht=24 end hv=(ps or \"-\").. \" / \" ..(ph or \"-\")end end function hdr(d,s,r)if(ht or 0)>0 then ht=ht-1 d:ldft(hx,8,14,20,hk or{255,255,255})d:ldft(hv,8,50,20,{225,225,225})else d:ldft(r and(mk and mlab[s]or klab[s])or \"-\",8,14,20,kcol[s]or{255,255,255})d:ldft(r and ev_p==r[1]and ev_v or \"\",8,50,20,{225,225,225})end end if kcol then setc(4,kcol[4])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 5,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] sp={[0]={\"Teal/orange\",{0,200,180}},[1]={\"Warm/violet\",{200,120,255}},[2]={\"Filmic green\",{60,200,90}},[3]={\"Warm mono\",{230,180,90}},[4]={\"Clear\",{255,110,0}}}if kcol then setc(5,kcol[5])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 6,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(6,kcol[6])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 7,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(7,kcol[7])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 8,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] function smm()ele[8]:epmo(0)ele[8]:epse(50)ele[8]:epmi(-100000)ele[8]:epma(100000)ele[8]:epva(0)end function selb(p)self.l_b=p if kpar[p]then smm()ele[8]:glp(2,255)else ele[8]:glp(2,0)end radio(p)midi_send(15,176,119,p)end self.eventrx_cb=function(self,h,e,xv,n)local m=(h[2]-125)*2+(127-h[3])local i=e[2]if m==5 and i==12 then mp=xv[1]>0 do return end end if(m==2 or m==3)and i//4==3 then local t=sp[(m-2)*4+3-(i%4)]if t then hx=t[1]hk=t[2]ht=24 if not hp then hp=true ps=nil ph=nil hv=\"\" end end do return end end if xv[1]==0 then return end local p=(m==4 and i<8)and i or((m==5 and i>=0 and i<=7)and(i+8)or nil)if p and(mk and kmsk or kpar)[p]then selb(p)end end if radio then selb(1)gps(\"package-lightroom-classic\",\"state\")end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] self.bo=3 if self:bst()>0 then fm=true ft=false self.lg=false self:timer_start(600)else fm=false self:timer_stop()ring(0.05)if not ft then if rm then gps(\"package-lightroom-classic\",\"develop\",\"straightenAngle\",0,0)else local r=(mk and kmsk or kpar)[self.l_b]if r then gps(\"package-lightroom-classic\",self.lg and \"reset-param\" or \"revert-param\",r[1])end end end end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if fm and not ft then self.lg=true else ring(0.05)end"
+                },
+                {
+                    "event": 7,
+                    "config": "--[[@cb]] if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then v=self.av or 0 else self.av=v end if fm then ft=true end local sc=(fm and 0.15 or 1)/91000 local p,amt,res if rm then p,amt,res=\"straightenAngle\",20,0.01 else local r=(mk and kmsk or kpar)[self.l_b]if r then p,amt,res=r[1],r[2]or 100,(fm and r[4])or r[3]or 1 end end if p then if not fm then ring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt/res self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//1 or-((-self.ac)//1)self.ac=self.ac-w if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 9,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sn]] self:gen(\"Page 1\")"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gpl(0)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 10,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sn]] self:gen(\"Page 2\")"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gpl(1)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 11,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sn]] self:gen(\"Page 3\")"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gpl(2)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 12,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@sn]] self:gen(\"Page 4\")"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gpl(3)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 13,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] glsb(255)klab={[0]=\"Curve Highlights\",[1]=\"Curve Lights\",[2]=\"Curve Darks\",[3]=\"Curve Shadows\",[8]=\"Shadow Lum\",[9]=\"Midtone Lum\",[10]=\"Highlight Lum\",[11]=\"Global Lum\",[12]=\"Blending\",[13]=\"Balance\"}ksho={[0]=\"C-Hi\",[1]=\"C-Li\",[2]=\"C-Dk\",[3]=\"C-Sh\",[8]=\"S-Lu\",[9]=\"M-Lu\",[10]=\"H-Lu\",[11]=\"G-Lu\",[12]=\"Blnd\",[13]=\"Bal\",[15]=\"RSET\",[16]=\"Undo\",[17]=\"Redo\",[18]=\"Prev\",[19]=\"Next\",[20]=\"MAP\",[21]=\"LrC\",[22]=\"CrpX\",[23]=\"Ovly\"}mlab={}klc={[16]={245,235,205},[17]={245,235,205},[18]={170,190,210},[19]={170,190,210},[20]={245,235,205},[21]={120,170,255},[22]={200,200,210},[23]={200,200,210}}rm=false fm=false bm=false mk=false mp=false"
+                },
+                {
+                    "event": 8,
+                    "config": "--[[@cb]] if not kcol or not lr_m or not ksho or not hdr then self:ldsw()do return end end self:ldaf(0,0,320,240,{0,0,0})local s=ele[8].l_b if mp then for i=0,23 do if ksho[i]then self:ldft(ksho[i],8+(i%4)*78,10+(i//4)*36,9,kcol[i]or klc[i]or{99,99,99})end end self:ldsw()do return end end local r=(mk and kmsk or kpar)[s]hdr(self,s,r)local tag=rm and \"CROP\" or bm and \"BEFORE\" or mk and \"MASK\" or fm and \"FINE\" or \"\" if tag~=\"\" then self:ldft(tag,312-15*#tag,14,16,{255,255,255})end self:ldft(lr_m .. lr_n,250,224,9,{70,70,70})for i=0,15 do if ksho[i]and(mk and(kmsk[i]or mlab[i])or not mk and kcol[i])then local kc=kcol[i]or{120,230,180}if i~=s then kc={kc[1]//3,kc[2]//3,kc[3]//3}end self:ldft(ksho[i],8+(i%4)*78,108+(i//4)*30,9,kc)end end self:ldsw()"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 255,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] kcol={[0]={255,190,90},[1]={255,190,90},[2]={255,190,90},[3]={255,190,90},[8]={150,190,255},[9]={150,190,255},[10]={150,190,255},[11]={150,190,255},[12]={150,190,255},[13]={150,190,255},[15]={255,110,0}}function setc(e,c)if c then ele[e]:glc(1,{{c[1],c[2],c[3],0.15}})end end function ring(a)local c=kcol[ele[8].l_b]if c then ele[8]:glc(2,{{c[1],c[2],c[3],a}})end end function radio(p)local ok=(not mk)or(kmsk and kmsk[p]~=nil)for i=0,7 do local c=kcol[i]if c then ele[i]:glc(1,{{c[1],c[2],c[3],(ok and i==p)and 1 or 0.15}})ele[i]:glp(1,((not mk)or(kmsk and kmsk[i]~=nil))and 255 or 0)end end ring(ok and 0.05 or 0)end for i=0,#ele-1 do ele[i]:ini()end"
+                },
+                {
+                    "event": 4,
+                    "config": "--[[@cb]] gpl(gpn())"
+                }
+            ]
+        }
+    ],
+    "virtualPath": "LR Console r1020-1040",
+    "files": [],
+    "access": [
+        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
+    ],
+    "public": false,
+    "isEditable": true
+}

@@ -1,0 +1,26 @@
+lrconsole.lrdevplugin is a modified copy of the Lightroom Classic plugin
+("lightroom-plugin.lrplugin") from Intech Studio's Grid Editor package:
+
+    https://github.com/intechstudio/package-lightroom-classic
+
+That package's package.json declares the ISC licence, author "intechstudio".
+The upstream repository has no separate LICENSE file; the ISC terms are
+reproduced here for the upstream portions:
+
+    Copyright (c) Intech Studio
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted, provided that the above
+    copyright notice and this permission notice appear in all copies.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+    WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+    ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+    WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+    ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Modifications (value echo, state watcher, slider follow, revert/reset,
+colour-toggle, tool toggles, presets, hue wrap, revealAdjustedControls)
+are (c) 2026 CJ Selby Spink, MIT licence (see ../LICENSE).

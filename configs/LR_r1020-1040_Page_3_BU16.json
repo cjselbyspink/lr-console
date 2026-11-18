@@ -1,0 +1,244 @@
+{
+    "id": "05c13a98-b34c-5de1-ab97-c7f3bcc3290d",
+    "modifiedAt": "2026-10-20T05:40:09.934Z",
+    "createdAt": "2026-10-20T05:40:09.934Z",
+    "name": "LR Console Page 3 BU16 r1020-1040",
+    "description": "Click here to add description",
+    "type": "BU16",
+    "version": {
+        "major": "1",
+        "minor": "7",
+        "patch": "2"
+    },
+    "configType": "profile",
+    "configs": [
+        {
+            "controlElementNumber": 0,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(0,kcol[0])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(0,kcol[0])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 1,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(1,kcol[1])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(1,kcol[1])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 2,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(2,kcol[2])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(2,kcol[2])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 3,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(3,kcol[3])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(3,kcol[3])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 4,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(4,kcol[4])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(4,kcol[4])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 5,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(5,kcol[5])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(5,kcol[5])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 6,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] if kcol then setc(6,kcol[6])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(6,kcol[6])end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 7,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{255,77,0,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then if not mk then gps(\"package-lightroom-classic\",\"reset\")end self:glc(1,{{255,77,0,1}})else self:glc(1,{{255,77,0,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 8,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{245,164,123,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"undo\")self:glc(1,{{245,164,123,1}})else self:glc(1,{{245,164,123,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 9,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{245,164,123,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"redo\")self:glc(1,{{245,164,123,1}})else self:glc(1,{{245,164,123,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 10,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,133,126,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"previous-photo\")self:glc(1,{{170,133,126,1}})else self:glc(1,{{170,133,126,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 11,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,133,126,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"next-photo\")self:glc(1,{{170,133,126,1}})else self:glc(1,{{170,133,126,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 12,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] function relit()for i=0,7 do local c=kcol[i]if c then local on=(not mk)or kmt[i]ele[i]:glc(1,{{c[1],c[2],c[3],(on and(i+8)==ls)and 1 or 0.15}})ele[i]:glp(1,on and 255 or 0)end end ele[7]:glp(1,mk and 0 or 255)for _,i in ipairs(ck)do ele[i]:glp(1,tl==\"C\" and 255 or 0)end if kmo then for i,c in pairs(kmo)do ele[i]:glc(1,{{c[1],c[2],c[3],0.15}})ele[i]:glp(1,mk and 255 or 0)end end end self.midirx_cb=function(self,h,d)if h[1]~=13 and d[2]==176 then if d[3]==119 then ls=d[4]relit()end end end ck={[1]=14,[2]=15}tl=\"?\" LrImportActive=function(id,m,l,p,v,r,f)tl=m mk=(m==\"M\")and next(kmt)~=nil if relit then relit()end end self:glc(1,{{245,164,123,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then self:glc(1,{{245,164,123,1}})else self:glc(1,{{245,164,123,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 13,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{120,119,153,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then keyboard_send(25,1,1,1,1,1,4,1,1,8,0,2,15,1,0,8,1,0,4,1,0,1)self:glc(1,{{120,119,153,1}})else self:glc(1,{{120,119,153,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 14,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{200,140,126,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then if tl==\"C\" then keyboard_send(25,0,2,27)end self:glc(1,{{200,140,126,1}})else self:glc(1,{{200,140,126,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 15,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{200,140,126,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then if tl==\"C\" then keyboard_send(25,0,2,18)end self:glc(1,{{200,140,126,1}})else self:glc(1,{{200,140,126,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 255,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] kcol={[0]={200,140,126},[1]={200,140,126},[2]={200,140,126},[3]={200,140,126},[4]={200,140,126},[5]={200,140,126},[6]={200,140,126}}kmt={}kmo={}mk=false ls=0 function setc(e,c)if c then ele[e]:glc(1,{{c[1],c[2],c[3],0.15}})end end for i=0,#ele-1 do ele[i]:ini()end relit()"
+                },
+                {
+                    "event": 4,
+                    "config": "--[[@cb]] gpl(gpn())"
+                }
+            ]
+        }
+    ],
+    "virtualPath": "LR Console r1020-1040",
+    "files": [],
+    "access": [
+        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
+    ],
+    "public": false,
+    "isEditable": true
+}

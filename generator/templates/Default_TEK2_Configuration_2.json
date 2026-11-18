@@ -1,0 +1,218 @@
+{
+    "id": "75cd8a4a-803d-43d6-b677-55bbcf39b67a",
+    "modifiedAt": "2026-09-08T05:59:10.675Z",
+    "createdAt": "2026-09-08T05:43:31.295Z",
+    "name": "Default TEK2 Configuration",
+    "description": "Click here to add description",
+    "type": "TEK2",
+    "version": {
+        "major": "1",
+        "minor": "7",
+        "patch": "2"
+    },
+    "configType": "profile",
+    "configs": [
+        {
+            "controlElementNumber": 0,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Button Init]]\n-- Comment for Claude\n"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 1,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Button Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 2,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Button Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 3,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Button Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 4,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Button Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 5,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Button Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 6,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Button Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 7,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Button Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 8,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Endless Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 7,
+                    "config": "--[[@sen]] self:epmo(0)self:epv0(50)self:epmi(0)self:epma(127)self:epse(50)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 9,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[Endless Init]]"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@sbc]] self:bmo(0)self:bmi(0)self:bma(127)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 7,
+                    "config": "--[[@sen]] self:epmo(0)self:epv0(50)self:epmi(0)self:epma(127)self:epse(50)--[[@sglc]] self:glc(-1,{{-1,-1,-1,1}})self:glp(-1,-1)--[[@gms]] self:gms(-1,-1,-1,-1)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 255,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] --[[page init]]"
+                },
+                {
+                    "event": 4,
+                    "config": "--[[@cb]] gpl(gpn())"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] print(\"tick\")"
+                }
+            ]
+        }
+    ],
+    "virtualPath": "This is a test folder",
+    "files": [],
+    "cloudId": "ThQZeedt7t5SLLxMiD3g",
+    "fileName": "Default TEK2 Configuration 1.json",
+    "isEditable": true,
+    "syncStatus": "synced",
+    "public": false
+}

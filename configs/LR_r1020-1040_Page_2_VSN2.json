@@ -1,0 +1,274 @@
+{
+    "id": "5c72dbe3-bb61-51e8-b5ee-79acc1737291",
+    "modifiedAt": "2026-10-20T05:40:09.913Z",
+    "createdAt": "2026-10-20T05:40:09.913Z",
+    "name": "LR Console Page 2 VSN2 r1020-1040",
+    "description": "Click here to add description",
+    "type": "VSN2",
+    "version": {
+        "major": "1",
+        "minor": "7",
+        "patch": "2"
+    },
+    "configType": "profile",
+    "configs": [
+        {
+            "controlElementNumber": 0,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] lc={red={255,0,25},yellow={255,220,0},green={0,255,40},blue={0,90,255},purple={140,0,255},P={0,255,40},R={255,0,25}}lk={[0]=\"R\",[1]=\"P\",[2]=\"green\",[3]=\"purple\",[4]=\"red\",[5]=\"yellow\",[6]=\"blue\"}function relab()for i,n in pairs(lk)do local c=lc[n]local on=(n==lr_l)or(n==lr_f)ele[i]:glc(1,{{c[1],c[2],c[3],on and 1 or 0.15}})end end self.eventrx_cb=function(self,h,e,xv,n)local m=(h[2]-127)*2+(127-h[3])local i=e[2]if m==5 and i==12 then mp=xv[1]>0 end end lr_n=0 lr_m=\"?\" lr_l=\"none\" lr_f=\"\" ev_p=\"\" ev_v=\"\" LrImportActive=function(id,m,l,p,v,r,f)lr_n=lr_n+1 lr_m=m lr_l=l lr_f=f if p~=\"\" then ev_p=p ev_v=v end if relab then relab()end end self:glc(1,{{255,0,25,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"flag\",\"reject\")self:glc(1,{{255,0,25,1}})else self:glc(1,{{255,0,25,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 1,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] zp={ColorGradeGlobalHue={\"Global\",1},SplitToningShadowHue={\"Shadows\",1},ColorGradeMidtoneHue={\"Midtones\",1},SplitToningHighlightHue={\"Highlights\",1},ColorGradeGlobalSat={\"Global\",2},SplitToningShadowSaturation={\"Shadows\",2},ColorGradeMidtoneSat={\"Midtones\",2},SplitToningHighlightSaturation={\"Highlights\",2}}self:glc(1,{{0,255,40,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"flag\",\"pick\")self:glc(1,{{0,255,40,1}})else self:glc(1,{{0,255,40,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 2,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{0,255,40,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"color-toggle\",\"green\")self:glc(1,{{0,255,40,1}})else self:glc(1,{{0,255,40,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 3,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{140,0,255,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"color-toggle\",\"purple\")self:glc(1,{{140,0,255,1}})else self:glc(1,{{140,0,255,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 4,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{255,0,25,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"color-toggle\",\"red\")self:glc(1,{{255,0,25,1}})else self:glc(1,{{255,0,25,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 5,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{255,220,0,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"color-toggle\",\"yellow\")self:glc(1,{{255,220,0,1}})else self:glc(1,{{255,220,0,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 6,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{0,90,255,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"color-toggle\",\"blue\")self:glc(1,{{0,90,255,1}})else self:glc(1,{{0,90,255,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 7,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self.q={[1]={\"flag\",\"remove\"}}self:glc(1,{{255,110,0,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"rating\",\"0\")self.qi=1 self:timer_start(60)end self:glc(1,{{255,110,0,self:bst()>0 and 1 or 0.15}})"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] local t=self.q[self.qi]if t then self.qi=self.qi+1 if t[3]then gps(\"package-lightroom-classic\",t[1],t[2],t[3])elseif t[2]then gps(\"package-lightroom-classic\",t[1],t[2])else gps(\"package-lightroom-classic\",t[1])end if self.q[self.qi]then self:timer_start(60)end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 8,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{235,205,120,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"rating\",\"1\")self:glc(1,{{235,205,120,1}})else self:glc(1,{{235,205,120,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 9,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{235,205,120,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"rating\",\"2\")self:glc(1,{{235,205,120,1}})else self:glc(1,{{235,205,120,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 10,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{235,205,120,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"rating\",\"3\")self:glc(1,{{235,205,120,1}})else self:glc(1,{{235,205,120,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 11,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,170,190,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then keyboard_send(25,1,1,8,1,1,2,0,2,24,1,0,2,1,0,8)self:glc(1,{{170,170,190,1}})else self:glc(1,{{170,170,190,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 12,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] glsb(255)bnr=\"Tone\" self.mk={[0]=\"Rejt\",[1]=\"Pick\",[2]=\"Red\",[3]=\"Yell\",[4]=\"Glob\",[5]=\"Shad\",[6]=\"Mask\",[7]=\"Bef/A\"}self.mc={[0]={255,0,25},[1]={0,255,40},[2]={255,0,25},[3]={255,220,0},[4]={225,225,225},[5]={70,90,230},[6]={120,230,180},[7]={180,220,255}}self.bl={[0]=\"*1\",[1]=\"*2\",[2]=\"*3\",[3]=\"Auto WB\"}self.bx={[0]=25,[1]=99,[2]=173,[3]=210}"
+                },
+                {
+                    "event": 8,
+                    "config": "--[[@cb]] if not lr_m or not knob or not bnr or not self.mk then self:ldsw()do return end end self:ldaf(0,0,320,240,{0,0,0})local z=zp and zp[ev_p]if z then if z[2]==1 then hz=z[1]hv=ev_v else sz=z[1]sv=ev_v end end if mp then kmap(self,self.mk,self.mc)else self:ldft(bnr,12,14,20,{255,255,255})self:ldft((hz or \"\").. \" \" ..(hv or \"\"),12,40,14,{225,225,225})self:ldft(lr_m .. lr_n,250,40,9,{70,70,70})end knob(self,mp and 250 or 160,\"Hue\",{200,200,200})foot(self)"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 13,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,190,170,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"view\",\"develop_reference_horiz\")self:glc(1,{{170,190,170,1}})else self:glc(1,{{170,190,170,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 14,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,190,170,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"view\",\"compare\")self:glc(1,{{170,190,170,1}})else self:glc(1,{{170,190,170,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 15,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,170,190,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then keyboard_send(25,1,1,8,0,2,24,1,0,8)self:glc(1,{{170,170,190,1}})else self:glc(1,{{170,170,190,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 16,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,190,170,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then keyboard_send(25,0,2,13)self:glc(1,{{170,190,170,1}})else self:glc(1,{{170,190,170,0.15}})if relab then relab()end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 17,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] glsb(255)md={L=\"Library\",D=\"Develop\",C=\"Crop\",M=\"Mask\"}self.mk={[0]=\"Grn\",[1]=\"Purp\",[2]=\"Blue\",[3]=\"Clr\",[4]=\"Mid\",[5]=\"High\",[6]=\"Copy\",[7]=\"Past\"}self.mc={[0]={0,255,40},[1]={140,0,255},[2]={0,90,255},[3]={255,110,0},[4]={150,190,255},[5]={255,200,120},[6]={170,190,210},[7]={170,190,210}}self.bl={[0]=\"Ref\",[1]=\"Compare\",[2]=\"Auto Tone\",[3]=\"Clip\"}self.bx={[0]=18,[1]=62,[2]=121,[3]=232}"
+                },
+                {
+                    "event": 8,
+                    "config": "--[[@cb]] if not lr_m or not knob or not self.mk then self:ldsw()do return end end self:ldaf(0,0,320,240,{0,0,0})local z=zp and zp[ev_p]if z then if z[2]==1 then hz=z[1]hv=ev_v else sz=z[1]sv=ev_v end end if mp then kmap(self,self.mk,self.mc)else self:ldft(md[lr_m]or lr_m,12,14,9,{60,60,60})self:ldft((sz or \"\").. \" \" ..(sv or \"\"),12,40,14,{225,225,225})end knob(self,mp and 250 or 160,\"Sat\",{150,190,255})foot(self)"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 255,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] rd={[0]={0,-44},[1]={22,-38},[2]={38,-22},[3]={44,0},[4]={38,22},[5]={22,38},[6]={0,44},[7]={-22,38},[8]={-38,22},[9]={-44,0},[10]={-38,-22},[11]={-22,-38}}function knob(s,x,nm,c)local h={c[1]//2,c[2]//2,c[3]//2}s:ldrrf(x-34,66,x+34,134,34,c)for j=0,11 do local o=rd[j]s:ldrrf(x+o[1]-3,97+o[2],x+o[1]+3,103+o[2],3,h)end s:ldft(nm,x-8*#nm,154,16,{225,225,225})end function foot(s)s:ldaf(0,188,320,189,{70,70,70})for i=0,3 do if s.bl[i]then s:ldft(s.bl[i],s.bx[i],(i%2==0)and 194 or 216,9,{150,170,150})end end s:ldsw()end function kmap(s,t,c)for i=0,7 do if t[i]then s:ldft(t[i],6+(i%2)*92,12+(i//2)*42,9,c[i]or{200,200,200})end end end for i=0,#ele-1 do ele[i]:ini()end"
+                },
+                {
+                    "event": 4,
+                    "config": "--[[@cb]] gpl(gpn())"
+                }
+            ]
+        }
+    ],
+    "virtualPath": "LR Console r1020-1040",
+    "files": [],
+    "access": [
+        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
+    ],
+    "public": false,
+    "isEditable": true
+}

@@ -1,0 +1,178 @@
+{
+    "id": "f97a4cf7-a262-5644-9007-25efcc6e38e7",
+    "modifiedAt": "2026-10-20T05:40:09.859Z",
+    "createdAt": "2026-10-20T05:40:09.859Z",
+    "name": "LR Console TEK2 Fixed r1020-1040",
+    "description": "Click here to add description",
+    "type": "TEK2",
+    "version": {
+        "major": "1",
+        "minor": "7",
+        "patch": "2"
+    },
+    "configType": "profile",
+    "configs": [
+        {
+            "controlElementNumber": 0,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,190,210,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"paste\")self:glc(1,{{170,190,210,1}})else self:glc(1,{{170,190,210,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 1,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,190,210,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"copy\")self:glc(1,{{170,190,210,1}})else self:glc(1,{{170,190,210,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 2,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{180,220,255,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then midi_send(15,176,115,127)gps(\"package-lightroom-classic\",\"view\",\"develop_before\")self:glc(1,{{180,220,255,1}})else midi_send(15,176,115,0)gps(\"package-lightroom-classic\",\"view\",\"develop_loupe\")self:glc(1,{{180,220,255,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 3,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] local prv=LrImportActive LrImportActive=function(id,m,l,p,v,r,f)if prv then prv(id,m,l,p,v,r,f)end self:glc(1,{{120,230,180,(m==\"M\")and 1 or 0.15}})end self:glc(1,{{120,230,180,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"tool-toggle\",\"masking\")end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 4,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{190,210,250,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"view\",\"survey\")self:glc(1,{{190,210,250,1}})else self:glc(1,{{190,210,250,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 5,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{190,210,250,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"view\",\"develop_loupe\")self:glc(1,{{190,210,250,1}})else self:glc(1,{{190,210,250,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 6,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{190,210,250,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"view\",\"library\")self:glc(1,{{190,210,250,1}})else self:glc(1,{{190,210,250,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 7,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] local prv=LrImportActive LrImportActive=function(id,m,l,p,v,r,f)if prv then prv(id,m,l,p,v,r,f)end self:glc(1,{{180,220,255,(m==\"C\")and 1 or 0.15}})end self:glc(1,{{180,220,255,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"tool-toggle\",\"crop\")end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 8,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:epmo(0)self:epse(50)self:epmi(-100000)self:epma(100000)self:epva(0)self:glc(2,{{90,160,255,0.05}})self:glp(2,255)"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] self:glc(2,{{90,160,255,0.05}})"
+                },
+                {
+                    "event": 7,
+                    "config": "--[[@cb]] self:glc(2,{{90,160,255,0.5}})self:timer_start(400)local v=self:epst()-64 if v>3000 or v<-3000 then v=self.av or 0 else self.av=v end self.ac=(self.ac or 0)+v*24/91000 if self.ac>=1 then self.ac=0 gps(\"package-lightroom-classic\",\"next-photo\")elseif self.ac<=-1 then self.ac=0 gps(\"package-lightroom-classic\",\"previous-photo\")end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 9,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:epmo(0)self:epse(50)self:epmi(-100000)self:epma(100000)self:epva(0)self:glc(2,{{225,225,225,0.05}})self:glp(2,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] self.bo=3 if self:bst()>0 then gps(\"package-lightroom-classic\",\"zoom-toggle\")end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] self:glc(2,{{225,225,225,0.05}})"
+                },
+                {
+                    "event": 7,
+                    "config": "--[[@cb]] self:glc(2,{{225,225,225,0.5}})self:timer_start(400)if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v~=0 then gps(\"package-lightroom-classic\",(v>0)and \"zoom-in\" or \"zoom-out\")end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 255,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] LrImportActive=nil function setc(e,c)if c then ele[e]:glc(1,{{c[1],c[2],c[3],0.15}})end end for i=0,#ele-1 do ele[i]:ini()end"
+                },
+                {
+                    "event": 4,
+                    "config": "--[[@cb]] gpl(gpn())"
+                }
+            ]
+        }
+    ],
+    "virtualPath": "LR Console r1020-1040",
+    "files": [],
+    "access": [
+        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
+    ],
+    "public": false,
+    "isEditable": true
+}

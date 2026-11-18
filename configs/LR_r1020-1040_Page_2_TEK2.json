@@ -1,0 +1,182 @@
+{
+    "id": "be26d68b-0ab8-553e-b330-c2e131ecff6b",
+    "modifiedAt": "2026-10-20T05:40:09.863Z",
+    "createdAt": "2026-10-20T05:40:09.863Z",
+    "name": "LR Console Page 2 TEK2 r1020-1040",
+    "description": "Click here to add description",
+    "type": "TEK2",
+    "version": {
+        "major": "1",
+        "minor": "7",
+        "patch": "2"
+    },
+    "configType": "profile",
+    "configs": [
+        {
+            "controlElementNumber": 0,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,190,210,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"paste\")self:glc(1,{{170,190,210,1}})else self:glc(1,{{170,190,210,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 1,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{170,190,210,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"copy\")self:glc(1,{{170,190,210,1}})else self:glc(1,{{170,190,210,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 2,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glc(1,{{180,220,255,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then midi_send(15,176,115,127)gps(\"package-lightroom-classic\",\"view\",\"develop_before\")self:glc(1,{{180,220,255,1}})else midi_send(15,176,115,0)gps(\"package-lightroom-classic\",\"view\",\"develop_loupe\")self:glc(1,{{180,220,255,0.15}})end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 3,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] local prv=LrImportActive LrImportActive=function(id,m,l,p,v,r,f)if prv then prv(id,m,l,p,v,r,f)end self:glc(1,{{120,230,180,(m==\"M\")and 1 or 0.15}})end self:glc(1,{{120,230,180,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then gps(\"package-lightroom-classic\",\"tool-toggle\",\"masking\")end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 4,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glp(1,255)if zrad then zrad()end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then zn=3 zrad()end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 5,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glp(1,255)if zrad then zrad()end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then zn=2 zrad()end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 6,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glp(1,255)if zrad then zrad()end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then zn=1 zrad()end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 7,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:glp(1,255)if zrad then zrad()end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then zn=0 zrad()end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 8,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:epmo(0)self:epse(50)self:epmi(-100000)self:epma(100000)self:epva(0)self:glc(2,{{150,190,255,0.05}})self:glp(2,255)self.side=2 self.zring=function(s,a)local c=zc[zn]s:glc(2,{{c[1],c[2],c[3],a}})end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] self.bo=3 if self:bst()>0 then self.fm=true self.ft=false self.lg=false self:timer_start(600)else self.fm=false self:timer_stop()self:zring(0.05)if not self.ft then gps(\"package-lightroom-classic\",self.lg and \"reset-param\" or \"revert-param\",zt[zn][self.side])end end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.fm and not self.ft then self.lg=true else self:zring(0.05)end"
+                },
+                {
+                    "event": 7,
+                    "config": "--[[@cb]] if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then v=self.av or 0 else self.av=v end if self.fm then self.ft=true end local sc=(self.fm and 0.15 or 1)/91000 local p,amt,res=zt[zn][self.side],za[self.side],zr[self.side]if not self.fm then self:zring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt/res self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//1 or-((-self.ac)//1)self.ac=self.ac-w if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 9,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] self:epmo(0)self:epse(50)self:epmi(-100000)self:epma(100000)self:epva(0)self:glc(2,{{150,190,255,0.05}})self:glp(2,255)self.side=1 self.zring=function(s,a)local c=zc[zn]s:glc(2,{{c[1],c[2],c[3],a}})end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] self.bo=3 if self:bst()>0 then self.fm=true self.ft=false self.lg=false self:timer_start(600)else self.fm=false self:timer_stop()self:zring(0.05)if not self.ft then gps(\"package-lightroom-classic\",self.lg and \"reset-param\" or \"revert-param\",zt[zn][self.side])end end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.fm and not self.ft then self.lg=true else self:zring(0.05)end"
+                },
+                {
+                    "event": 7,
+                    "config": "--[[@cb]] if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then v=self.av or 0 else self.av=v end if self.fm then self.ft=true end local sc=(self.fm and 0.15 or 1)/91000 local p,amt,res=zt[zn][self.side],za[self.side],zr[self.side]if not self.fm then self:zring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt/res self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//1 or-((-self.ac)//1)self.ac=self.ac-w if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 255,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] zt={[0]={\"ColorGradeGlobalHue\",\"ColorGradeGlobalSat\"},[1]={\"SplitToningShadowHue\",\"SplitToningShadowSaturation\"},[2]={\"ColorGradeMidtoneHue\",\"ColorGradeMidtoneSat\"},[3]={\"SplitToningHighlightHue\",\"SplitToningHighlightSaturation\"}}zc={[0]={225,225,225},[1]={70,90,230},[2]={150,190,255},[3]={255,200,120}}zk={[0]=7,[1]=6,[2]=5,[3]=4}za={[1]=-360,[2]=100}zr={[1]=1,[2]=1}zn=2 function zrad()for i=0,3 do local c=zc[i]ele[zk[i]]:glc(1,{{c[1],c[2],c[3],(i==zn)and 1 or 0.15}})end local c=zc[zn]ele[9]:glc(2,{{c[1],c[2],c[3],0.05}})ele[8]:glc(2,{{c[1],c[2],c[3],0.05}})end LrImportActive=nil function setc(e,c)if c then ele[e]:glc(1,{{c[1],c[2],c[3],0.15}})end end for i=0,#ele-1 do ele[i]:ini()end"
+                },
+                {
+                    "event": 4,
+                    "config": "--[[@cb]] gpl(gpn())"
+                }
+            ]
+        }
+    ],
+    "virtualPath": "LR Console r1020-1040",
+    "files": [],
+    "access": [
+        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
+    ],
+    "public": false,
+    "isEditable": true
+}
