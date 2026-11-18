@@ -1,0 +1,367 @@
+{
+    "id": "1c956d12-32b0-5374-8b94-3333c30b0ed1",
+    "modifiedAt": "2026-11-18T11:22:49.904Z",
+    "name": "LR Console Starter EN16 HSL r1118-1630",
+    "description": "Click here to add description",
+    "type": "EN16",
+    "version": {
+        "major": "1",
+        "minor": "7",
+        "patch": "2"
+    },
+    "configType": "profile",
+    "configs": [
+        {
+            "controlElementNumber": 0,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] LrImportActive=function()end prp={[0]=\"HueAdjustment\",[1]=\"SaturationAdjustment\",[2]=\"LuminanceAdjustment\"}bla=0.05 bofs=0 hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 1,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 2,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 3,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 4,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 5,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 6,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 7,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 8,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 9,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 10,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 11,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 12,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 13,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 14,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 15,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] hsl(self)"
+                },
+                {
+                    "event": 2,
+                    "config": "--[[@cb]] local d=self:est()-64 if d==0 then return end if self.p then self.ft=true self.ac=(self.ac or 0)+d*(self.fm and 1 or 5)local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],0.5}})if not self.pd then self.pd=true self:timer_start(60)end elseif self.s then if pact~=self:element_index()then pfire(self)end local l=self.lv+d*4 if l<0 then l=0 elseif l>300 then l=300 end self.lv=l if not self.pd then self.pd=true self:timer_start(60)end end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self.p then if self:bst()>0 then self.fm=true self.ft=false else self.fm=false if not self.ft then gps(\"package-lightroom-classic\",\"develop\",self.p,0,0)end end elseif self.s and self:bst()>0 then pfire(self)end"
+                },
+                {
+                    "event": 6,
+                    "config": "--[[@cb]] if self.p then if self.pd then self.pd=false if(self.ac or 0)~=0 then gps(\"package-lightroom-classic\",\"develop\",self.p,self.ac,1)self.ac=0 self.pd=true self:timer_start(60)else self:timer_start(400)end else local c=brgb[bofs+self:element_index()//4]self:glc(1,{{c[1],c[2],c[3],bla}})end do return end end if self.pd then self.pd=false psend(self)end"
+                }
+            ]
+        },
+        {
+            "controlElementNumber": 255,
+            "events": [
+                {
+                    "event": 0,
+                    "config": "--[[@cb]] bnd={[0]=\"Red\",[1]=\"Orange\",[2]=\"Yellow\",[3]=\"Green\"}brgb={[0]={255,0,0},[1]={255,110,0},[2]={255,220,0},[3]={40,200,0}}spt={[0]={{0,200,180},210,20,45,20},[1]={{200,120,255},275,12,40,10},[2]={{60,200,90},140,15,45,12},[3]={{230,180,90},30,22,45,15}}function hsl(e)local i=e:element_index()local b=bofs+i//4 local p=prp[i%4]e.p=p and(p .. bnd[b])or nil e.s=(i%4==3)and spt[b]or nil e.lv=100 e:emo(0)e:ese(100)e:emi(0)e:ema(127)local c=e.p and brgb[b]or(e.s and e.s[1])if c then e:glc(1,{{c[1],c[2],c[3],bla}})e:glp(1,255)else e:glp(1,0)end end function psend(e)local s=e.s gps(\"package-lightroom-classic\",\"preset\",s[2],s[3]*e.lv//100,s[4],s[5]*e.lv//100)end function pfire(e)pact=e:element_index()e.lv=100 psend(e)end for i=0,#ele-1 do ele[i]:ini()end"
+                },
+                {
+                    "event": 4,
+                    "config": "--[[@cb]] gpl(gpn())"
+                }
+            ]
+        }
+    ],
+    "files": [],
+    "createdAt": "2026-11-18T11:22:49.904Z",
+    "virtualPath": "LR Console r1118-1630"
+}

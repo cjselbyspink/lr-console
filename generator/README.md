@@ -30,12 +30,15 @@ Then:
 | `lr_pages2.py` | Page definitions: which parameter is on which key, colours, steps |
 | `lr_pages.py` | Palettes, split-tone presets, the EN16 page, template lookup |
 | `build_all.py` | Builds everything and runs the checks |
+| `lr_starter.py` | A two-module page set (one EN16 + one VSN1), built with `python3 build_all.py out <stamp> flipped lr_starter`. Untested on hardware: see ../docs/STARTER.md |
+| `test_starter.py` | Stub test for the starter in a Lua interpreter (needs `pip install lupa`) |
 | `templates/` | Default exports from Grid Editor 1.7.x, one per module type. Every field the generator doesn't own is copied from these verbatim. |
 
 ## Adapting it
 
 - **Different parameters on the same hardware:** edit the `P*_KEYS` / `P*_PARAMS` / `P*_SHORT` lists in `lr_pages2.py`. Parameter names are Adobe's `LrDevelopController` names; mask versions are `local_<Name>`.
 - **Different arrangement of the same six modules:** add a position table in `lr_common.py` (`POS_FLIPPED` is mine) and pass its name as `LAYOUT`. Check the rotations too (`BU16_ROT`, TEK2 at 180°, EN16s at 270°): Grid Editor doesn't remap elements for a rotated module.
+- **Fewer modules:** `lr_starter.py` is a worked example for one EN16 + one VSN1, reusing the jog, receiver and LCD pieces unchanged.
 - **Different modules:** export a Default config for each from the Editor, add it to `templates/` and `lr_pages.EXPORTS`, then write a page function. Expect to measure things: element numbering, which callbacks a module type receives, and how its LEDs behave all differ (see ../docs/CODE-REFERENCE.md §2–4, §7).
 
 Some code paths in `lr_common.py` and `lr_pages.py` date from earlier layouts and are no longer used. They are kept because other parts import from them; pruning them is on the to-do list.
