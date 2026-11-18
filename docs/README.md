@@ -8,6 +8,7 @@ These are the working notes from the build, published as they were rather than t
 
 | File | Read it for |
 |---|---|
+| [img/board-diagram.png](img/board-diagram.png) | One-picture map of the board on page 1 |
 | [LAYOUT.md](LAYOUT.md) | Every key, hold and dial as built (2 Oct 2026, plus small later tweaks: coarse dial steps of 5, Temperature in 5 K, a "Hue" label under Mask) |
 | [CODE-REFERENCE.md](CODE-REFERENCE.md) | How the Grid modules actually behave: element maps, cross-module messaging, LED rules, the dial model, the 50 ms drain, the plugin. §14 lists beliefs that turned out to be wrong. |
 | [BENCH-FINDINGS.md](BENCH-FINDINGS.md) | The measurements from 26 Sep that the redesign rests on |
