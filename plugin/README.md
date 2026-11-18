@@ -4,6 +4,10 @@ Intech's Grid Editor package talks to Lightroom Classic through a small Lightroo
 
 It's a drop-in replacement for the plugin half only. The Grid Editor package (`index.js`) stays stock and unchanged. Any Grid layout can use these commands and replies; you don't need my board.
 
+![The VSN1 screen reading Shadows 45 while Lightroom's Shadows slider shows +45](../docs/img/readback.jpg)
+
+*The board's screen showing the value Lightroom reports, after the slider was dragged with the mouse.*
+
 ## What it adds
 
 **Replies with state.** The package turns the plugin's reply into a call to `LrImportActive(...)` on every module. The fork reuses the stock reply's fields to carry:

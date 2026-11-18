@@ -2,9 +2,11 @@
 
 A six-module [Intech Grid](https://intech.studio) controller for Adobe Lightroom Classic, plus a fork of Intech's Lightroom plugin that lets the board read Lightroom's state as well as send commands to it.
 
+[![LR Console in use: the board in front of Lightroom Classic](docs/img/in-use.jpg)](https://youtu.be/oXRRLskzCUU)
+
 ![LR Console layout: what every key, knob and screen does on page 1](docs/img/board-diagram.png)
 
-**Video:** _link to follow_ · **Forum thread:** _link to follow_
+**Video (2 min 43 s):** https://youtu.be/oXRRLskzCUU · **Forum thread:** _link to follow_
 
 ## What it does
 
