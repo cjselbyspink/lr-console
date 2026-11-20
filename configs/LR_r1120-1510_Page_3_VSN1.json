@@ -1,8 +1,7 @@
 {
-    "id": "44802bff-f4cb-56da-9cf7-57e1e8598761",
-    "modifiedAt": "2026-10-20T05:40:09.944Z",
-    "createdAt": "2026-10-20T05:40:09.944Z",
-    "name": "LR Console Page 4 VSN1 r1020-1040",
+    "id": "f3379269-48c5-5553-b485-96383aeb315a",
+    "modifiedAt": "2026-11-20T10:19:58.985Z",
+    "name": "LR Console Page 3 VSN1 r1120-1510",
     "description": "Click here to add description",
     "type": "VSN1L",
     "version": {
@@ -26,7 +25,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] kpar={}if kcol then setc(1,kcol[1])end"
+                    "config": "--[[@cb]] kpar={[0]={\"Sharpness\",120,5,1},[1]={\"SharpenRadius\",3,0.1,0.05},[2]={\"SharpenDetail\",120,5,1},[3]={\"SharpenEdgeMasking\",120,5,1},[4]={\"LuminanceSmoothing\",120,5,1},[5]={\"LuminanceNoiseReductionDetail\",120,5,1},[6]={\"LuminanceNoiseReductionContrast\",120,5,1},[7]={\"ColorNoiseReduction\",120,5,1},[8]={\"ColorNoiseReductionDetail\",120,5,1},[9]={\"ColorNoiseReductionSmoothness\",120,5,1},[10]={\"PostCropVignetteAmount\",120,5,1},[11]={\"PostCropVignetteMidpoint\",120,5,1},[12]={\"PostCropVignetteFeather\",120,5,1},[13]={\"GrainAmount\",120,5,1},[14]={\"GrainSize\",120,5,1}}if kcol then setc(1,kcol[1])end"
                 }
             ]
         },
@@ -89,7 +88,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] function smm()ele[8]:epmo(0)ele[8]:epse(50)ele[8]:epmi(-100000)ele[8]:epma(100000)ele[8]:epva(0)end function selb(p)self.l_b=p if kpar[p]then smm()ele[8]:glp(2,255)else ele[8]:glp(2,0)end radio(p)midi_send(15,176,119,p)end self.eventrx_cb=function(self,h,e,xv,n)local m=(h[2]-125)*2+(127-h[3])local i=e[2]if m==5 and i==12 then mp=xv[1]>0 do return end end if(m==2 or m==3)and i//4==3 then local t=sp[(m-2)*4+3-(i%4)]if t then hx=t[1]hk=t[2]ht=24 if not hp then hp=true ps=nil ph=nil hv=\"\" end end do return end end if xv[1]==0 then return end local p=(m==4 and i<8)and i or((m==5 and i>=0 and i<=7)and(i+8)or nil)if p and(mk and kmsk or kpar)[p]then selb(p)end end if radio then selb(0)gps(\"package-lightroom-classic\",\"state\")end"
+                    "config": "--[[@cb]] function smm()ele[8]:epmo(0)ele[8]:epse(50)ele[8]:epmi(-100000)ele[8]:epma(100000)ele[8]:epva(0)end function selb(p)if self.l_b~=p then self.bo=10 end self.l_b=p if kpar[p]then smm()ele[8]:glp(2,255)else ele[8]:glp(2,0)end radio(p)midi_send(15,176,119,p)end self.eventrx_cb=function(self,h,e,xv,n)local m=(h[2]-125)*2+(127-h[3])local i=e[2]if m==5 and i==12 then mp=xv[1]>0 do return end end if(m==2 or m==3)and i//4==3 then local t=sp[(m-2)*4+3-(i%4)]if t then hx=t[1]hk=t[2]ht=24 if not hp then hp=true ps=nil ph=nil hv=\"\" end end do return end end if xv[1]==0 then return end local p=(m==4 and i<8)and i or((m==5 and i>=0 and i<=7)and(i+8)or nil)if p and(mk and kmsk or kpar)[p]then selb(p)end end if radio then selb(0)gps(\"package-lightroom-classic\",\"state\")end"
                 },
                 {
                     "event": 3,
@@ -101,7 +100,7 @@
                 },
                 {
                     "event": 7,
-                    "config": "--[[@cb]] if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then v=self.av or 0 else self.av=v end if fm then ft=true end local sc=(fm and 0.15 or 1)/91000 local p,amt,res if rm then p,amt,res=\"straightenAngle\",20,0.01 else local r=(mk and kmsk or kpar)[self.l_b]if r then p,amt,res=r[1],r[2]or 100,(fm and r[4])or r[3]or 1 end end if p then if not fm then ring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt/res self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//1 or-((-self.ac)//1)self.ac=self.ac-w if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end end"
+                    "config": "--[[@cb]] de=(de or 0)+1 if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then ds=(ds or 0)+1 self.sr=(self.sr or 0)+1 v=self.sr<=2 and(self.av or 0)or 0 else self.sr=0 self.av=v end if fm then ft=true end local sc=(fm and 0.15 or 1)/91000 local p,amt,res if rm then p,amt,res=\"straightenAngle\",20,0.01 else local r=(mk and kmsk or kpar)[self.l_b]if r then p,amt,res=r[1],r[2]or 100,(fm and r[4])or r[3]or 1 end end if p then if p~=self.lp then self.ac=0 self.gt=0 self.lp=p end if not fm then ring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//res or-((-self.ac)//res)self.ac=self.ac-w*res if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end end"
                 }
             ]
         },
@@ -162,11 +161,11 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] glsb(255)klab={}ksho={[15]=\"RSET\",[16]=\"Undo\",[17]=\"Redo\",[18]=\"Prev\",[19]=\"Next\",[20]=\"MAP\",[21]=\"LrC\",[22]=\"CrpX\",[23]=\"Ovly\"}mlab={}klc={[16]={245,235,205},[17]={245,235,205},[18]={170,190,210},[19]={170,190,210},[20]={245,235,205},[21]={120,170,255},[22]={200,200,210},[23]={200,200,210}}rm=false fm=false bm=false mk=false mp=false"
+                    "config": "--[[@cb]] glsb(255)klab={[0]=\"Sharpness\",[1]=\"Radius\",[2]=\"Detail\",[3]=\"Masking\",[4]=\"Lum NR\",[5]=\"Lum Detail\",[6]=\"Lum Contrast\",[7]=\"Colour NR\",[8]=\"Col Detail\",[9]=\"Col Smooth\",[10]=\"Vig Amount\",[11]=\"Vig Midpoint\",[12]=\"Vig Feather\",[13]=\"Grain Amount\",[14]=\"Grain Size\"}ksho={[0]=\"Shrp\",[1]=\"Rad\",[2]=\"Det\",[3]=\"EMsk\",[4]=\"L-NR\",[5]=\"L-Dt\",[6]=\"L-Ct\",[7]=\"C-NR\",[8]=\"C-Dt\",[9]=\"C-Sm\",[10]=\"V-Am\",[11]=\"V-Md\",[12]=\"V-Ft\",[13]=\"G-Am\",[14]=\"G-Sz\",[15]=\"RSET\",[16]=\"Undo\",[17]=\"Redo\",[18]=\"Prev\",[19]=\"Next\",[20]=\"MAP\",[21]=\"LrC\",[22]=\"CrpX\",[23]=\"Ovly\"}mlab={}klc={[16]={245,235,205},[17]={245,235,205},[18]={170,190,210},[19]={170,190,210},[20]={245,235,205},[21]={120,170,255},[22]={200,200,210},[23]={200,200,210}}rm=false fm=false bm=false mk=false mp=false"
                 },
                 {
                     "event": 8,
-                    "config": "--[[@cb]] if not kcol or not lr_m or not ksho or not hdr then self:ldsw()do return end end self:ldaf(0,0,320,240,{0,0,0})local s=ele[8].l_b if mp then for i=0,23 do if ksho[i]then self:ldft(ksho[i],8+(i%4)*78,10+(i//4)*36,9,kcol[i]or klc[i]or{99,99,99})end end self:ldsw()do return end end local r=(mk and kmsk or kpar)[s]hdr(self,s,r)local tag=rm and \"CROP\" or bm and \"BEFORE\" or mk and \"MASK\" or fm and \"FINE\" or \"\" if tag~=\"\" then self:ldft(tag,312-15*#tag,14,16,{255,255,255})end self:ldft(lr_m .. lr_n,250,224,9,{70,70,70})for i=0,15 do if ksho[i]and(mk and(kmsk[i]or mlab[i])or not mk and kcol[i])then local kc=kcol[i]or{120,230,180}if i~=s then kc={kc[1]//3,kc[2]//3,kc[3]//3}end self:ldft(ksho[i],8+(i%4)*78,108+(i//4)*30,9,kc)end end self:ldsw()"
+                    "config": "--[[@cb]] if not kcol or not lr_m or not ksho or not hdr then self:ldsw()do return end end self:ldaf(0,0,320,240,{0,0,0})local s=ele[8].l_b if mp then for i=0,23 do if ksho[i]then self:ldft(ksho[i],8+(i%4)*78,10+(i//4)*36,9,kcol[i]or klc[i]or{99,99,99})end end self:ldsw()do return end end local r=(mk and kmsk or kpar)[s]hdr(self,s,r)local tag=rm and \"CROP\" or bm and \"BEFORE\" or mk and \"MASK\" or fm and \"FINE\" or \"\" if tag~=\"\" then self:ldft(tag,312-15*#tag,14,16,{255,255,255})end self:ldft(lr_m .. lr_n,250,224,9,{70,70,70})self:ldft((ds or 0).. \"s #\" ..(de or 0),8,80,9,{90,90,90})for i=0,15 do if ksho[i]and(mk and(kmsk[i]or mlab[i])or not mk and kcol[i])then local kc=kcol[i]or{120,230,180}if i~=s then kc={kc[1]//3,kc[2]//3,kc[3]//3}end self:ldft(ksho[i],8+(i%4)*78,108+(i//4)*30,9,kc)end end self:ldsw()"
                 }
             ]
         },
@@ -175,7 +174,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] kcol={[15]={255,110,0}}function setc(e,c)if c then ele[e]:glc(1,{{c[1],c[2],c[3],0.15}})end end function ring(a)local c=kcol[ele[8].l_b]if c then ele[8]:glc(2,{{c[1],c[2],c[3],a}})end end function radio(p)local ok=(not mk)or(kmsk and kmsk[p]~=nil)for i=0,7 do local c=kcol[i]if c then ele[i]:glc(1,{{c[1],c[2],c[3],(ok and i==p)and 1 or 0.15}})ele[i]:glp(1,((not mk)or(kmsk and kmsk[i]~=nil))and 255 or 0)end end ring(ok and 0.05 or 0)end for i=0,#ele-1 do ele[i]:ini()end"
+                    "config": "--[[@cb]] kcol={[0]={200,200,210},[1]={200,200,210},[2]={200,200,210},[3]={200,200,210},[4]={200,200,210},[5]={200,200,210},[6]={200,200,210},[7]={200,200,210},[8]={200,200,210},[9]={200,200,210},[10]={200,200,210},[11]={200,200,210},[12]={200,200,210},[13]={200,200,210},[14]={200,200,210},[15]={255,110,0}}function setc(e,c)if c then ele[e]:glc(1,{{c[1],c[2],c[3],0.15}})end end function ring(a)local c=kcol[ele[8].l_b]if c then ele[8]:glc(2,{{c[1],c[2],c[3],a}})end end function radio(p)local ok=(not mk)or(kmsk and kmsk[p]~=nil)for i=0,7 do local c=kcol[i]if c then ele[i]:glc(1,{{c[1],c[2],c[3],(ok and i==p)and 1 or 0.15}})ele[i]:glp(1,((not mk)or(kmsk and kmsk[i]~=nil))and 255 or 0)end end ring(ok and 0.05 or 0)end for i=0,#ele-1 do ele[i]:ini()end"
                 },
                 {
                     "event": 4,
@@ -184,11 +183,7 @@
             ]
         }
     ],
-    "virtualPath": "LR Console r1020-1040",
     "files": [],
-    "access": [
-        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
-    ],
-    "public": false,
-    "isEditable": true
+    "createdAt": "2026-11-20T10:19:58.985Z",
+    "virtualPath": "LR Console r1120-1510"
 }

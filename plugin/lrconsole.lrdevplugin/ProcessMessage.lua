@@ -370,7 +370,13 @@ function handleMessage(message, senderSocket)
       if HUE_WRAP[parameterName] then nextValue = nextValue % 360 end
     end
     LrDevelopController.setValue(parameterName, tonumber(nextValue))
-    noteTick(parameterName, currentValue, LrDevelopController.getValue(parameterName))
+    local afterValue = LrDevelopController.getValue(parameterName)
+    -- 0.2.17 (20 Nov): one line per develop command, so a jump identifies
+    -- itself: the raw message as received, LrC's value before, what the
+    -- plugin asked for, and what LrC ended up with.
+    logger:trace('DEV [' .. message .. '] before=' .. tostring(currentValue)
+      .. ' asked=' .. tostring(nextValue) .. ' after=' .. tostring(afterValue))
+    noteTick(parameterName, currentValue, afterValue)
   elseif command == "preset" then
     -- 0.2.15: split-tone preset as ONE message — shadow hue, shadow sat,
     -- highlight hue, highlight sat — so the four never race each other or

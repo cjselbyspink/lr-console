@@ -63,7 +63,7 @@ Check these first if it misbehaves.
 
 ```
 cd generator
-python3 build_all.py out 1118-1630 flipped lr_starter   # reproduces configs/starter-en16-vsn1
+python3 build_all.py out 1120-1510 flipped lr_starter   # reproduces configs/starter-en16-vsn1
 pip install lupa && python3 test_starter.py out          # the stub test
 ```
 

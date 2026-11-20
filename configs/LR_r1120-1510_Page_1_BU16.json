@@ -1,8 +1,7 @@
 {
-    "id": "f24ab4bb-3dfe-5104-968d-1d8e527a8903",
-    "modifiedAt": "2026-10-20T05:40:09.950Z",
-    "createdAt": "2026-10-20T05:40:09.950Z",
-    "name": "LR Console Page 4 BU16 r1020-1040",
+    "id": "d3055b93-f078-5dac-b463-ecba5ee031d6",
+    "modifiedAt": "2026-11-20T10:19:58.967Z",
+    "name": "LR Console Page 1 BU16 r1120-1510",
     "description": "Click here to add description",
     "type": "BU16",
     "version": {
@@ -17,7 +16,11 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] self:glp(1,0)"
+                    "config": "--[[@cb]] if kcol then setc(0,kcol[0])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(0,kcol[0])end"
                 }
             ]
         },
@@ -26,7 +29,11 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] self:glp(1,0)"
+                    "config": "--[[@cb]] if kcol then setc(1,kcol[1])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(1,kcol[1])end"
                 }
             ]
         },
@@ -35,7 +42,11 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] self:glp(1,0)"
+                    "config": "--[[@cb]] if kcol then setc(2,kcol[2])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(2,kcol[2])end"
                 }
             ]
         },
@@ -44,7 +55,11 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] self:glp(1,0)"
+                    "config": "--[[@cb]] if kcol then setc(3,kcol[3])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(3,kcol[3])end"
                 }
             ]
         },
@@ -53,7 +68,11 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] self:glp(1,0)"
+                    "config": "--[[@cb]] if kcol then setc(4,kcol[4])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(4,kcol[4])end"
                 }
             ]
         },
@@ -62,7 +81,11 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] self:glp(1,0)"
+                    "config": "--[[@cb]] if kcol then setc(5,kcol[5])end"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 and kcol then setc(5,kcol[5])end"
                 }
             ]
         },
@@ -71,7 +94,11 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] self:glp(1,0)"
+                    "config": "--[[@cb]] self:glc(1,{{120,161,108,0.15}})self:glp(1,255)"
+                },
+                {
+                    "event": 3,
+                    "config": "--[[@cb]] if self:bst()>0 then if mk then keyboard_send(25,1,1,4,0,2,52,1,0,4)end self:glc(1,{{120,161,108,1}})else self:glc(1,{{120,161,108,0.15}})end"
                 }
             ]
         },
@@ -197,7 +224,7 @@
             "events": [
                 {
                     "event": 0,
-                    "config": "--[[@cb]] kcol={}kmt={}kmo={}mk=false ls=0 function setc(e,c)if c then ele[e]:glc(1,{{c[1],c[2],c[3],0.15}})end end for i=0,#ele-1 do ele[i]:ini()end relit()"
+                    "config": "--[[@cb]] kcol={[0]={255,133,54},[1]={255,133,54},[2]={255,133,54},[3]={255,133,54},[4]={255,133,54},[5]={255,133,54}}kmt={[0]=true,[1]=true,[2]=true,[3]=true,[4]=true}kmo={[6]={120,161,108}}mk=false ls=0 function setc(e,c)if c then ele[e]:glc(1,{{c[1],c[2],c[3],0.15}})end end for i=0,#ele-1 do ele[i]:ini()end relit()"
                 },
                 {
                     "event": 4,
@@ -206,11 +233,7 @@
             ]
         }
     ],
-    "virtualPath": "LR Console r1020-1040",
     "files": [],
-    "access": [
-        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
-    ],
-    "public": false,
-    "isEditable": true
+    "createdAt": "2026-11-20T10:19:58.967Z",
+    "virtualPath": "LR Console r1120-1510"
 }

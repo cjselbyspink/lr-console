@@ -1,8 +1,7 @@
 {
-    "id": "53992025-7f2e-5964-8e64-97429efbfe6a",
-    "modifiedAt": "2026-10-20T05:40:09.907Z",
-    "createdAt": "2026-10-20T05:40:09.907Z",
-    "name": "LR Console Page 2 BU16 r1020-1040",
+    "id": "3630dded-e296-5af2-80a7-f9071f314247",
+    "modifiedAt": "2026-11-20T10:19:58.978Z",
+    "name": "LR Console Page 2 BU16 r1120-1510",
     "description": "Click here to add description",
     "type": "BU16",
     "version": {
@@ -230,11 +229,7 @@
             ]
         }
     ],
-    "virtualPath": "LR Console r1020-1040",
     "files": [],
-    "access": [
-        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
-    ],
-    "public": false,
-    "isEditable": true
+    "createdAt": "2026-11-20T10:19:58.978Z",
+    "virtualPath": "LR Console r1120-1510"
 }

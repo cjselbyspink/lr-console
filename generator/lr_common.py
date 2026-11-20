@@ -326,6 +326,18 @@ end
 # convenience: at 20 degrees per revolution the coarse minimum is 0.06 degrees.
 REV_UNITS = 91000
 SPIKE = 3000
+# 20 Nov: runaway guard. A spike is replaced by the last good reading (above),
+# but nothing limited how many in a row: a RUN of out-of-range readings kept
+# repeating the last real rate, ~3.3 tint per event at 110 Hz, 0 -> 150 in
+# ~0.4 s with no hand on the dial [reported 20 Nov; mechanism INFERRED, not
+# yet measured]. Measured spikes are isolated (2, 2 and 39-in-83 on a brisk
+# spin), so SUB_MAX consecutive substitutions keep a brisk turn honest and
+# anything longer counts as zero.
+SUB_MAX = 2
+# Ticks discarded after every selection change, ~110 Hz, so ~90 ms: a key
+# press beside the jog, or the counter reset in smm(), must not move the new
+# parameter [guard, cause unmeasured].
+SEL_BLACKOUT = 10
 FINE = 0.15   # 20 Oct: was 0.1 [stated: fine wants slightly less rotation]
 
 # Press-wobble. A press or release on the Endless dial produces a few spurious

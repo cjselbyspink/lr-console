@@ -1,8 +1,7 @@
 {
-    "id": "65773bda-6401-514b-945d-36cab0d9c7b8",
-    "modifiedAt": "2026-10-20T05:40:09.938Z",
-    "createdAt": "2026-10-20T05:40:09.938Z",
-    "name": "LR Console Page 3 VSN2 r1020-1040",
+    "id": "31e831ff-c065-56fe-b0fc-6746bf66a9c9",
+    "modifiedAt": "2026-11-20T10:19:58.992Z",
+    "name": "LR Console Page 3 VSN2 r1120-1510",
     "description": "Click here to add description",
     "type": "VSN2",
     "version": {
@@ -264,11 +263,7 @@
             ]
         }
     ],
-    "virtualPath": "LR Console r1020-1040",
     "files": [],
-    "access": [
-        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
-    ],
-    "public": false,
-    "isEditable": true
+    "createdAt": "2026-11-20T10:19:58.992Z",
+    "virtualPath": "LR Console r1120-1510"
 }

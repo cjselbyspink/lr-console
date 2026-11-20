@@ -1,4 +1,4 @@
-# LR Console plugin (fork of Intech's Lightroom plugin) — v0.2.16
+# LR Console plugin (fork of Intech's Lightroom plugin) — v0.2.17
 
 Intech's Grid Editor package talks to Lightroom Classic through a small Lightroom plugin. The stock plugin takes commands from the board (develop a slider, set a flag, change a view) and answers only with the active photo's EXIF. **This fork makes the conversation two-way**: the board learns what Lightroom is doing and can show it.
 
@@ -52,7 +52,7 @@ Replies are sent:
 2. Lightroom → File → Plug-in Manager → select **Grid Editor** (the stock plugin) → **Disable**. Both plugins listen on port 23111, so only one can run.
 3. **Add…** → choose `lrconsole.lrdevplugin` → enable it.
 4. **Restart Lightroom.**
-5. Check the log: `~/Library/Logs/Adobe/Lightroom/LrClassicLogs/LRConsole.log` should show `LR Console fork 0.2.16 starting`. Every command in is logged as `COMMAND <name>` and every reply out as `REPLY <reason>`. Read this log before debugging anything on the Lightroom side.
+5. Check the log: `~/Library/Logs/Adobe/Lightroom/LrClassicLogs/LRConsole.log` should show `LR Console fork 0.2.17 starting`. Every command in is logged as `COMMAND <name>` and every reply out as `REPLY <reason>`; every develop command also gets a `DEV [<raw message>] before= asked= after=` line, which shows exactly what the board sent and what Lightroom did with it. Read this log before debugging anything on the Lightroom side.
 
 To go back: disable this plugin, enable the stock one, restart Lightroom.
 

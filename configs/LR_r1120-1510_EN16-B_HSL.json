@@ -1,8 +1,7 @@
 {
-    "id": "ff60c907-4fa0-5baf-ba97-8ec70b381388",
-    "modifiedAt": "2026-10-20T05:40:09.844Z",
-    "createdAt": "2026-10-20T05:40:09.844Z",
-    "name": "LR Console EN16-B HSL r1020-1040",
+    "id": "95236405-135c-5320-9f10-bb1147a78751",
+    "modifiedAt": "2026-11-20T10:19:58.948Z",
+    "name": "LR Console EN16-B HSL r1120-1510",
     "description": "Click here to add description",
     "type": "EN16",
     "version": {
@@ -362,11 +361,7 @@
             ]
         }
     ],
-    "virtualPath": "LR Console r1020-1040",
     "files": [],
-    "access": [
-        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
-    ],
-    "public": false,
-    "isEditable": true
+    "createdAt": "2026-11-20T10:19:58.948Z",
+    "virtualPath": "LR Console r1120-1510"
 }

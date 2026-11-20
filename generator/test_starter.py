@@ -9,7 +9,7 @@ NOT prove anything about real hardware: element numbering, LED behaviour and
 which events a module receives are all stubbed assumptions here.
 
     pip install lupa
-    python3 build_all.py /tmp/st 1118-1630 flipped lr_starter
+    python3 build_all.py /tmp/st 1120-1510 flipped lr_starter
     python3 test_starter.py /tmp/st
 """
 import json, sys
@@ -67,10 +67,22 @@ g.LrImportActive(1,"D","none","","",0,"")
 E8.eventrx_cb(E8,T(0,126,127),T(0,7,2),T(1,0,127),0); ok(g.hx=="Warm/violet",'EN16 preset knob (element 7, upright) names Warm/violet: %s'%g.hx)
 E8.eventrx_cb(E8,T(0,126,127),T(0,5,2),T(1,0,127),0); ok(E8.l_b==1,'EN16 HSL knob event does not change selection')
 lua.execute('calls={}'); E8._epst=2064
+# 20 Nov: a selection change (here the Tint follow above) discards SEL_BLACKOUT
+# (10) jog ticks, so a key press or the counter reset can't nudge the new slider.
+for k in range(10): fn[(8,7)](E8)
+ok(g.calls[1] is None,'ten jog ticks right after a selection are ignored (settle)')
 for k in range(6): fn[(8,7)](E8)
 c=g.calls[1]; ok(c is not None and c[2]=="develop" and c[3]=="Tint" and c[4]==10 and c[5]==1,'six jog events send one relative develop for Tint: %s %s %s'%(c[2],c[3],c[4]))
 lua.execute('calls={}'); E8._bst=127; fn[(8,3)](E8); E8._bst=0; fn[(8,3)](E8)
 c=g.calls[1]; ok(c[2]=="revert-param" and c[3]=="Tint",'tap sends revert-param Tint')
+# 20 Nov regression: leftover straighten steps (0.01 deg) must not reach the
+# next parameter. A crop turn ending between sends, then a gentle Tint turn of
+# less than one 5-step, must send nothing for Tint (the bug sent +60..+175).
+g.LrImportActive(1,"C","none","","",0,""); E8._epst=464
+for k in range(16): fn[(8,7)](E8)
+g.LrImportActive(1,"D","none","","",0,""); lua.execute('calls={}'); E8._epst=364
+for k in range(6): fn[(8,7)](E8)
+ok(g.calls[1] is None,'no straighten carry-over into Tint after leaving Crop')
 fn[(13,8)](g.ele[13]); ok(True,'LCD Draw runs')
 g.LrImportActive(1,"M","none","","",0,""); fn[(13,8)](g.ele[13]); ok(True,'LCD Draw runs under Mask')
 

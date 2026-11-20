@@ -37,7 +37,7 @@ BUDGET MAP (VSN1, per page)
 
 import lr_common as C
 from lr_common import PKG, lua_table, lua_value, send, INI_LOOP, SETC, SMM, \
-    MIDI_CH, MIDI_CC_SLOT, SPIKE, REV_UNITS, FINE, BLACKOUT, SEND_EVERY, \
+    MIDI_CH, MIDI_CC_SLOT, SPIKE, SUB_MAX, SEL_BLACKOUT, REV_UNITS, FINE, BLACKOUT, SEND_EVERY, \
     IDLE, RING_IDLE, RING_ON, RING_MS
 
 # MIDI CCs from TEK2 to VSN1. Value 127 = held, 0 = released. CC 117 (Mask)
@@ -241,6 +241,7 @@ def vsn1_keys(kpar_lua, kmsk_lua, hdr_lua='', sp_lua=''):
 # ------------------------------------------------------------------ VSN1 dial
 SELB16 = """
 function selb(p)
+  if self.l_b ~= p then self.bo = %d end
   self.l_b = p
   if kpar[p] then
     smm()
@@ -251,7 +252,7 @@ function selb(p)
   radio(p)
   midi_send(%d, 176, %d, p)
 end
-""" % (MIDI_CH, MIDI_CC_SLOT)
+""" % (SEL_BLACKOUT, MIDI_CH, MIDI_CC_SLOT)
 
 
 def vsn1_dispatch():
@@ -281,12 +282,20 @@ end
 # The turn. Mask held swaps the parameter table; Rotate held drives the
 # straighten angle. Zoom is no longer here — it is TEK2's left dial.
 DIAL_ENDLESS = """
+de = (de or 0) + 1
 if (self.bo or 0) > 0 then
   self.bo = self.bo - 1
   do return end
 end
 local v = self:endless_state() - 64
-if v > %d or v < -%d then v = self.av or 0 else self.av = v end
+if v > %d or v < -%d then
+  ds = (ds or 0) + 1
+  self.sr = (self.sr or 0) + 1
+  v = self.sr <= %d and (self.av or 0) or 0
+else
+  self.sr = 0
+  self.av = v
+end
 if fm then ft = true end
 local sc = (fm and %s or 1) / %d
 local p, amt, res
@@ -297,19 +306,20 @@ else
   if r then p, amt, res = r[1], r[2] or 100, (fm and r[4]) or r[3] or 1 end
 end
 if p then
+  if p ~= self.lp then self.ac = 0 self.gt = 0 self.lp = p end
   if not fm then ring(%s) self:timer_start(%s) end
-  self.ac = (self.ac or 0) + v * sc * amt / res
+  self.ac = (self.ac or 0) + v * sc * amt
   self.gt = (self.gt or 0) + 1
   if self.gt >= %d then
     self.gt = 0
-    local w = self.ac >= 0 and self.ac // 1 or -((-self.ac) // 1)
-    self.ac = self.ac - w
+    local w = self.ac >= 0 and self.ac // res or -((-self.ac) // res)
+    self.ac = self.ac - w * res
     if w ~= 0 then
       package_send(%s, "develop", p, w * res, 1)
     end
   end
 end
-""" % (SPIKE, SPIKE, FINE, REV_UNITS, RING_ON, RING_MS, SEND_EVERY, PKG)
+""" % (SPIKE, SPIKE, SUB_MAX, FINE, REV_UNITS, RING_ON, RING_MS, SEND_EVERY, PKG)
 
 # Press: fine mode while held; the timer decides whether a release without a
 # turn is a tap (revert) or a long press (reset). Both are plugin commands
@@ -388,6 +398,7 @@ hdr(self, s, r)
 local tag = rm and "CROP" or bm and "BEFORE" or mk and "MASK" or fm and "FINE" or ""
 if tag ~= "" then self:draw_text_fast(tag, 312 - 15 * #tag, 14, 16, {255, 255, 255}) end
 self:draw_text_fast(lr_m .. lr_n, 250, 224, 9, {70, 70, 70})
+self:draw_text_fast((ds or 0) .. "s #" .. (de or 0), 8, 80, 9, {90, 90, 90})
 for i = 0, 15 do
   -- Under Mask only twin-bearing slots and mask-only keys are drawn
   -- [stated 2 Oct: Vignette/Reset are dark, so the map should agree].
@@ -619,8 +630,14 @@ TEK2_ZOOM_PRESS = 'self.bo = %d\nif self:button_state() > 0 then package_send(%s
 FILM_PER_REV = 24
 TEK2_FILM_TURN = """
 local v = self:endless_state() - 64
-if v > 3000 or v < -3000 then v = self.av or 0 else self.av = v end
-self.ac = (self.ac or 0) + v * %d / 91000
+if v > %d or v < -%d then
+  self.sr = (self.sr or 0) + 1
+  v = self.sr <= %d and (self.av or 0) or 0
+else
+  self.sr = 0
+  self.av = v
+end
+self.ac = (self.ac or 0) + v * %d / %d
 if self.ac >= 1 then
   self.ac = 0
   package_send(%s, "next-photo")
@@ -628,7 +645,7 @@ elseif self.ac <= -1 then
   self.ac = 0
   package_send(%s, "previous-photo")
 end
-""" % (FILM_PER_REV, PKG, PKG)
+""" % (SPIKE, SPIKE, SUB_MAX, FILM_PER_REV, REV_UNITS, PKG, PKG)
 
 
 def tek2_dial(el, rgb, turn, press=None):
@@ -704,10 +721,17 @@ if (self.bo or 0) > 0 then
   do return end
 end
 local v = self:endless_state() - 64
-if v > %d or v < -%d then v = self.av or 0 else self.av = v end
+if v > %d or v < -%d then
+  self.sr = (self.sr or 0) + 1
+  v = self.sr <= %d and (self.av or 0) or 0
+else
+  self.sr = 0
+  self.av = v
+end
 if self.fm then self.ft = true end
 local sc = (self.fm and %s or 1) / %d
 local p, amt, res = zt[zn][self.side], za[self.side], zr[self.side]
+if p ~= self.lp then self.ac = 0 self.gt = 0 self.lp = p end
 if not self.fm then self:zring(%s) self:timer_start(%s) end
 self.ac = (self.ac or 0) + v * sc * amt / res
 self.gt = (self.gt or 0) + 1
@@ -719,7 +743,7 @@ if self.gt >= %d then
     package_send(%s, "develop", p, w * res, 1)
   end
 end
-""" % (SPIKE, SPIKE, FINE, REV_UNITS, RING_ON, RING_MS, SEND_EVERY, PKG)
+""" % (SPIKE, SPIKE, SUB_MAX, FINE, REV_UNITS, RING_ON, RING_MS, SEND_EVERY, PKG)
 
 TEK2_PDIAL_BUTTON = """
 self.bo = %d

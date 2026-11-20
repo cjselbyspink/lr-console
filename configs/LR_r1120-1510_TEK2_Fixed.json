@@ -1,8 +1,8 @@
 {
-    "id": "f97a4cf7-a262-5644-9007-25efcc6e38e7",
-    "modifiedAt": "2026-10-20T05:40:09.859Z",
-    "createdAt": "2026-10-20T05:40:09.859Z",
-    "name": "LR Console TEK2 Fixed r1020-1040",
+    "id": "abc12873-12da-53e8-af91-a90fec48baa4",
+    "modifiedAt": "2026-11-20T10:19:58.957Z",
+    "createdAt": "2026-11-20T10:19:58.957Z",
+    "name": "LR Console TEK2 Fixed r1120-1510",
     "description": "Click here to add description",
     "type": "TEK2",
     "version": {
@@ -129,7 +129,7 @@
                 },
                 {
                     "event": 7,
-                    "config": "--[[@cb]] self:glc(2,{{90,160,255,0.5}})self:timer_start(400)local v=self:epst()-64 if v>3000 or v<-3000 then v=self.av or 0 else self.av=v end self.ac=(self.ac or 0)+v*24/91000 if self.ac>=1 then self.ac=0 gps(\"package-lightroom-classic\",\"next-photo\")elseif self.ac<=-1 then self.ac=0 gps(\"package-lightroom-classic\",\"previous-photo\")end"
+                    "config": "--[[@cb]] self:glc(2,{{90,160,255,0.5}})self:timer_start(400)local v=self:epst()-64 if v>3000 or v<-3000 then self.sr=(self.sr or 0)+1 v=self.sr<=2 and(self.av or 0)or 0 else self.sr=0 self.av=v end self.ac=(self.ac or 0)+v*24/91000 if self.ac>=1 then self.ac=0 gps(\"package-lightroom-classic\",\"next-photo\")elseif self.ac<=-1 then self.ac=0 gps(\"package-lightroom-classic\",\"previous-photo\")end"
                 }
             ]
         },
@@ -168,11 +168,8 @@
             ]
         }
     ],
-    "virtualPath": "LR Console r1020-1040",
+    "virtualPath": "LR Console r1120-1510",
     "files": [],
-    "access": [
-        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
-    ],
-    "public": false,
-    "isEditable": true
+    "isEditable": true,
+    "public": false
 }

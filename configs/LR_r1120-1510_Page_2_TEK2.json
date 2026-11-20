@@ -1,8 +1,8 @@
 {
-    "id": "be26d68b-0ab8-553e-b330-c2e131ecff6b",
-    "modifiedAt": "2026-10-20T05:40:09.863Z",
-    "createdAt": "2026-10-20T05:40:09.863Z",
-    "name": "LR Console Page 2 TEK2 r1020-1040",
+    "id": "146e72c2-6045-588b-bb14-0d34c8c21d89",
+    "modifiedAt": "2026-11-20T10:19:58.959Z",
+    "createdAt": "2026-11-20T10:19:58.959Z",
+    "name": "LR Console Page 2 TEK2 r1120-1510",
     "description": "Click here to add description",
     "type": "TEK2",
     "version": {
@@ -133,7 +133,7 @@
                 },
                 {
                     "event": 7,
-                    "config": "--[[@cb]] if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then v=self.av or 0 else self.av=v end if self.fm then self.ft=true end local sc=(self.fm and 0.15 or 1)/91000 local p,amt,res=zt[zn][self.side],za[self.side],zr[self.side]if not self.fm then self:zring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt/res self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//1 or-((-self.ac)//1)self.ac=self.ac-w if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end"
+                    "config": "--[[@cb]] if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then self.sr=(self.sr or 0)+1 v=self.sr<=2 and(self.av or 0)or 0 else self.sr=0 self.av=v end if self.fm then self.ft=true end local sc=(self.fm and 0.15 or 1)/91000 local p,amt,res=zt[zn][self.side],za[self.side],zr[self.side]if p~=self.lp then self.ac=0 self.gt=0 self.lp=p end if not self.fm then self:zring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt/res self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//1 or-((-self.ac)//1)self.ac=self.ac-w if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end"
                 }
             ]
         },
@@ -154,7 +154,7 @@
                 },
                 {
                     "event": 7,
-                    "config": "--[[@cb]] if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then v=self.av or 0 else self.av=v end if self.fm then self.ft=true end local sc=(self.fm and 0.15 or 1)/91000 local p,amt,res=zt[zn][self.side],za[self.side],zr[self.side]if not self.fm then self:zring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt/res self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//1 or-((-self.ac)//1)self.ac=self.ac-w if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end"
+                    "config": "--[[@cb]] if(self.bo or 0)>0 then self.bo=self.bo-1 do return end end local v=self:epst()-64 if v>3000 or v<-3000 then self.sr=(self.sr or 0)+1 v=self.sr<=2 and(self.av or 0)or 0 else self.sr=0 self.av=v end if self.fm then self.ft=true end local sc=(self.fm and 0.15 or 1)/91000 local p,amt,res=zt[zn][self.side],za[self.side],zr[self.side]if p~=self.lp then self.ac=0 self.gt=0 self.lp=p end if not self.fm then self:zring(0.5)self:timer_start(400)end self.ac=(self.ac or 0)+v*sc*amt/res self.gt=(self.gt or 0)+1 if self.gt>=6 then self.gt=0 local w=self.ac>=0 and self.ac//1 or-((-self.ac)//1)self.ac=self.ac-w if w~=0 then gps(\"package-lightroom-classic\",\"develop\",p,w*res,1)end end"
                 }
             ]
         },
@@ -172,11 +172,8 @@
             ]
         }
     ],
-    "virtualPath": "LR Console r1020-1040",
+    "virtualPath": "LR Console r1120-1510",
     "files": [],
-    "access": [
-        "HvoN7mk9NZPtgH2v2DvSB1D0UKU2"
-    ],
-    "public": false,
-    "isEditable": true
+    "isEditable": true,
+    "public": false
 }

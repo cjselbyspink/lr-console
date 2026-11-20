@@ -5,7 +5,7 @@
 -- Own identifier so both can be installed, but ONLY ONE may be enabled at a
 -- time: both listen on 127.0.0.1:23111 for the Grid Editor package.
 return {
-  VERSION = { major = 0, minor = 2, revision = 16, },
+  VERSION = { major = 0, minor = 2, revision = 17, },
   LrSdkVersion = 6.0,
   LrSdkMinimumVersion = 6.0,
   LrToolkitIdentifier = "com.selbyspink.lrconsole",

@@ -10,7 +10,7 @@ Python 3, no dependencies.
 
 ```
 python3 build_all.py OUT_DIR [STAMP] [LAYOUT]
-python3 build_all.py out 1020-1040 flipped     # reproduces ../configs exactly
+python3 build_all.py out 1120-1510 flipped     # reproduces ../configs exactly
 ```
 
 The script writes one profile per module per page and runs the checks: the 908 limit, wrapper shape against the module's Default export, a stable id, lint for known Lua mistakes, and element/event structure. It stops with `CHECKS FAILED` if anything breaks.

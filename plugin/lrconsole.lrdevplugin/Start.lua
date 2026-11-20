@@ -11,7 +11,7 @@ local LrDate = import 'LrDate'
 local LrFunctionContext = import "LrFunctionContext"
 local logger = LrLogger('LRConsole')
 logger:enable("logfile")
-logger:trace('LR Console fork 0.2.16 starting')
+logger:trace('LR Console fork 0.2.17 starting')
 
 require 'ProcessMessage'
 

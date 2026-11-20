@@ -28,9 +28,9 @@ That is why the docs look the way they do. Every claim is marked **[M]** measure
 
 | Folder | What it is | Who it's for |
 |---|---|---|
-| [`plugin/`](plugin/) | The Lightroom plugin fork (`lrconsole.lrdevplugin`, v0.2.16) | **Anyone with a Grid and Lightroom.** It's the part most worth reusing. |
+| [`plugin/`](plugin/) | The Lightroom plugin fork (`lrconsole.lrdevplugin`, v0.2.17) | **Anyone with a Grid and Lightroom.** It's the part most worth reusing. |
 | [`generator/`](generator/) | Python that writes the Grid Editor `.json` profiles. Never hand-edit Lua on the module. | Anyone building their own layout |
-| [`configs/`](configs/) | The 16 profiles currently on my board (build `r1020-1040`) | People with exactly my six modules in exactly my arrangement |
+| [`configs/`](configs/) | The 16 profiles currently on my board (build `r1120-1510`) | People with exactly my six modules in exactly my arrangement |
 | [`configs/starter-en16-vsn1/`](configs/starter-en16-vsn1/) | A two-module version: one EN16 + one VSN1. **Untested on hardware**, see [docs/STARTER.md](docs/STARTER.md) | People who want to start smaller |
 | [`hammerspoon/`](hammerspoon/) | Three lines that let a board key bring Lightroom to the front | Mac users |
 | [`docs/`](docs/) | Layout, code reference, bench findings: the working notes from the build | Anyone going deeper |
